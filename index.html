@@ -3,21 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three.js Bubble and Grass Scene</title>
+    <title>Three.js Grass and Bubble Scene</title>
     <style>
-        body {
-            margin: 0;
-            background-color: white;  /* 设置网页背景为白色 */
+        body { margin: 0; background-color: black; }
+        canvas { display: block; }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            font-size: 2rem;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1000;
         }
-        canvas {
-            display: block;
+        #arrow-left {
+            left: 20px;
+        }
+        #arrow-right {
+            right: 20px;
         }
     </style>
 </head>
 <body>
     <div id="container"></div>
+    <button id="arrow-left" class="arrow">&#9664;</button>
+    <button id="arrow-right" class="arrow">&#9654;</button>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Include Three.js and OrbitControls directly from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    
+    <!-- Include shaders, Grass, and main script -->
+    <script src="shaders.js"></script>
+    <script src="Grass.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
